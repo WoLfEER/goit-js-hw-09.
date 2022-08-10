@@ -7,28 +7,31 @@ const { form, firstDelay, delayStep, amount } = {
   amount: document.querySelector('[name="amount"]'),
 };
 
-console.log(form, firstDelay, delayStep, amount);
-console.log(firstDelay.value);
-
 form.addEventListener('submit', event => {
   event.preventDefault();
 
-  let firstDelayValue = firstDelay.value;
-  const delayStepValue = delayStep.value;
+  // const for get value
+
+  let getDelayValue = Number(firstDelay.value);
+  const getStepValue = Number(delayStep.value);
+  console.log(getStepValue);
+  console.log(getDelayValue);
 
   for (let index = 1; index <= amount.value; index++) {
-    createPromise(index, firstDelayValue)
+    console.log(index);
+    createPromise(index, getDelayValue)
       .then(({ position, delay }) => {
-        Notify.success(`Fulfilled promise ${position} in ${delay}`);
+        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
       })
       .catch(({ position, delay }) => {
-        Notify.failure(`Rejected promise ${position} in ${delay}`);
+        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
       });
-
-    firstDelayValue += delayStepValue;
+    getDelayValue += getStepValue;
   }
+  form.reset();
 });
 
+// functions //
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
 

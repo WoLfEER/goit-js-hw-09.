@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// const //
+// const
 
 const {
   daysRef,
@@ -54,8 +54,8 @@ fieldsRef.forEach(field => {
   field.firstElementChild.style.textAlign = 'center';
   field.firstElementChild.style.fontSize = '36px';
 });
-startBtn.style.backgroundColor = "fffbbb"
-startBtn.style.borderRadius = "20px"
+startBtn.style.backgroundColor = 'fffbbb';
+startBtn.style.borderRadius = '20px';
 // functions//
 
 function onBtnStartClick() {
@@ -90,7 +90,7 @@ function disabledBtn(value) {
 }
 
 function dіsableInput(value) {
-    formInput.disabled = !startBtn.disabled;
+  formInput.disabled = !startBtn.disabled;
 }
 
 function pad(value) {
@@ -116,10 +116,10 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-    function disabledBtn(value) {
-    startBtn.disabled = value;
-    }
+function disabledBtn(value) {
+  startBtn.disabled = value;
+}
 
-    function dіsableInput(value) {
-    formInput.disabled = value;
-    }
+function dіsableInput(value) {
+  formInput.disabled = value;
+}
