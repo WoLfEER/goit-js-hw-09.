@@ -85,13 +85,13 @@ function updateTime({ days, hours, minutes, seconds }) {
   secondsRef.textContent = seconds;
 }
 
-function disabledBtn(value) {
-  startBtn.disabled = !startBtn.disabled;
-}
+// function disabledBtn(value) {
+//   startBtn.disabled = !startBtn.disabled;
+// }
 
-function dіsableInput(value) {
-  formInput.disabled = !startBtn.disabled;
-}
+// function dіsableInput(value) {
+//   formInput.disabled = !startBtn.disabled;
+// }
 
 function pad(value) {
   return String(value).padStart(2, '0');
